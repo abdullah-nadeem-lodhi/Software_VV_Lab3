@@ -1,0 +1,7 @@
+| State_ID | State_Name | Description | Entry Condition | Exit Condition |
+| -------- | ---------- | ----------- | --------------- | -------------- |
+| S-01 | IDLE | The robot is waiting for a valid delivery request and is not moving. | No valid delivery request is active, and the robot is ready to receive a new task. | A valid delivery request is received and navigation starts. |
+| S-02 | NAVIGATING | The robot is moving toward the assigned destination after accepting a valid request. | A valid delivery request has been accepted and the robot has started route execution. | An obstacle is detected, the destination is reached, or a critical battery condition occurs. |
+| S-03 | AVOIDING_OBSTACLE | The robot has stopped because an obstacle is in its path and is executing a safe avoidance action. | An obstacle is detected in the current route while the robot is navigating. | The obstacle is avoided and the path is clear for navigation to resume. |
+| S-04 | DELIVERING | The robot has reached the destination and is executing the final delivery action. | The destination has been reached and the delivery task is active. | The delivery is completed successfully or the task is interrupted by an invalid condition. |
+| S-05 | RETURNING | The robot is moving back to the warehouse to recharge or return after a priority condition. | A delivery completes successfully or a critical battery condition triggers a return-to-warehouse action. | The robot reaches the warehouse and becomes idle again. |
